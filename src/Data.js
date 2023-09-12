@@ -7,13 +7,12 @@ const Data = () => {
       .then((response) => response.json())
       .then((item) => setValue(item.list))
       .catch((error) => console.log(error));
-  }, []);
-  const allData = value.filter((item) => item.type !== undefined);
+  }, []);  
   return (
     <>
       <div>
         <h1>data</h1>
-        {allData.map((item) => (
+        {value.map((item) => ( item.type !== undefined &&
           <>
             <p>
               <div>Name: {item.name}</div>
